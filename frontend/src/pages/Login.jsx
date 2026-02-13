@@ -13,9 +13,10 @@ const Login = () => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
-
+  const URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/'
+  console.log(URL)
     try {
-      const response = await fetch(`https://ai-job-scraper-t6bp.onrender.com/api/user/login`, {
+      const response = await fetch(`${URL}api/user/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

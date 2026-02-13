@@ -3,8 +3,8 @@ import {
   UploadCloud, FileText, Trash2, CheckCircle, 
   AlertTriangle, X, Loader2, BarChart3, TrendingUp 
 } from "lucide-react";
-
-const API = "http://localhost:3000/api/jobs";
+const URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/'
+const API = `${URL}api/jobs`;
 
 const ATSCheck = () => {
   // State

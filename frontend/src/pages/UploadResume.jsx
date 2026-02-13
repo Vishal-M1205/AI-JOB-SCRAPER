@@ -10,8 +10,9 @@ import {
   Loader2,
   LogIn
 } from "lucide-react";
+const URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/'
 
-const API = "http://localhost:3000/api/jobs";
+const API = `${URL}api/jobs`;
 
 const UploadResume = () => {
   const [resumes, setResumes] = useState([]);
@@ -32,7 +33,7 @@ const UploadResume = () => {
     const verifyToken = async () => {
       if (!token) return;
       try {
-        const res = await fetch("http://localhost:3000/api/user/verify", {
+        const res = await fetch(`${URL}api/user/verify`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) setIsAuthenticated(true);

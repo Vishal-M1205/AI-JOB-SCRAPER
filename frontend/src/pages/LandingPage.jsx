@@ -15,7 +15,7 @@ import {
 const LandingPage = () => {
   const [user, setUser] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-
+const URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/'
   // Scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -28,7 +28,7 @@ const LandingPage = () => {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    fetch('http://localhost:3000/api/user/verify', {
+    fetch(`${URL}api/user/verify`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.ok ? res.json() : Promise.reject())
