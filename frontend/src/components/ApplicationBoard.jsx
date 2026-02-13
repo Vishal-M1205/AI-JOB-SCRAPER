@@ -4,9 +4,9 @@ import {
   Trash2, ExternalLink, MapPin, Building2, 
   Loader2, Sparkles, X, Copy, Check 
 } from "lucide-react";
-
-const API = "http://localhost:3000/api/applications";
-const JOB_API = "http://localhost:3000/api/jobs"; // To call the generator
+const URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/'
+const API = `${URL}api/applications`;
+const JOB_API = `${URL}api/jobs`; // To call the generator
 const COLUMNS = ["Saved", "Applied", "Interviewing", "Offer", "Rejected"];
 
 const ApplicationBoard = () => {
