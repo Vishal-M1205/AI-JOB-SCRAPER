@@ -12,7 +12,7 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://ai-job-scraper-vert.vercel.app/" }));
 // Routes
 app.use("/api/jobs", jobRoutes);
 app.use("/api/user", userRoutes);
