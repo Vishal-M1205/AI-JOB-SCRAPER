@@ -59,7 +59,7 @@ const JobSearch = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`${API_URL}/search`, {
+      const response = await fetch(`${API_URL}search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
